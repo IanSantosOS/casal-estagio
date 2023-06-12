@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/button.css">
+    <title>Click Buttons</title>
+</head>
+<body>
+    <nav>
+        <a href="/index.html"><button>Página Inicial</button></a>
+        <a href="/pages/1_tabela.html"><button>Requisito 1</button></a>
+        <a href="/pages/2_button.html"><button>Requisito 2</button></a>
+        <a href="/pages/3_container.html"><button>Requisito 3</button></a>
+        <a href="/pages/4_handleClick.html"><button disabled>Requisito 4</button></a>
+        <a href="/pages/5_formulario.html"><button>Requisito 5</button></a>
+        <a href="/pages/6_livraria.html"><button>Requisito 6</button></a>
+        <a href="/pages/7_login.html"><button>Requisito 7</button></a>
+    </nav>
+    <header>
+        <h1>Click Buttons</h1>
+    </header>
+    <hr>
+    <section>
+        <p>obs: não utilizar <mark>classe</mark> ou <mark>id</mark> pois é para todos os botões terem essa ativação!</p>
+        <button>botão</button>
+        <button>botão</button>
+        <button>botão</button>
+    </section>
+    <hr>
+    <h2>Requisito:</h2>
+    <ol start="4">
+        <li> Escreva um trecho de código JavaScript que adicionou um evento de clique a todos os botões da página e chame uma função chamada "handleClick" quando um botão for clicado.</li>
+    </ol>
+
+    <script type="text/javascript">
+        const buttons = Array.from(document.querySelectorAll("button")).filter((botao) => {
+            return botao.parentElement.nodeName !== "A";
+        });
+        buttons.forEach(botao => {
+            botao.addEventListener("click", handleClick);
+        });
+        function handleClick() {
+            alert("Parabéns você clicou em um botão!");
+        }
+    </script>
+</body>
+</html>

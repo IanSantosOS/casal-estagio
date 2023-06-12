@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/livraria.css">
+    <title>Livraria Digital</title>
+</head>
+
+<body>
+    <nav>
+        <a href="/index.html"><button>Página Inicial</button></a>
+        <a href="/pages/1_tabela.html"><button>Requisito 1</button></a>
+        <a href="/pages/2_button.html"><button>Requisito 2</button></a>
+        <a href="/pages/3_container.html"><button>Requisito 3</button></a>
+        <a href="/pages/4_handleClick.html"><button>Requisito 4</button></a>
+        <a href="/pages/5_formulario.html"><button>Requisito 5</button></a>
+        <a href="/pages/6_livraria.html"><button disabled>Requisito 6</button></a>
+        <a href="/pages/7_login.html"><button>Requisito 7</button></a>
+    </nav>
+
+    <header>
+        <h1>Livraria Digital</h1>
+        <div class="carrinho-compras">
+            <div hidden id="notificacao" class="circle">99</div>
+            <svg style="fill:#fac20a" xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 576 512"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg>
+        </div>
+    </header>
+    <hr>
+
+    <section>
+        <nav class="lista-compras" hidden></nav>
+
+        <div class="livros_disponiveis">
+            <div class="livro" id="id0">
+                <img src="/imgs/Sherlock_UmEstudoEmVermelho.jpg" alt="Sherlock Holmes Um Estudo Em Vermelho">
+                <h3 class="titulo">Sherlock Holmes - Um Estudo Em Vermelho</h3>
+                <hr>
+                <h3 class="valor">R$ 23.85</h3>
+                <button onclick="adicionarNoCarrinho(0)" class="adicionar-carrinho">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 576 512"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96zM252 160c0 11 9 20 20 20h44v44c0 11 9 20 20 20s20-9 20-20V180h44c11 0 20-9 20-20s-9-20-20-20H356V96c0-11-9-20-20-20s-20 9-20 20v44H272c-11 0-20 9-20 20z"/></svg>
+                </button>
+            </div>
+            <div class="livro" id="id1">
+                <img src="/imgs/A_Cabana.jpg" alt="A Cabana by William P. Young">
+                <h3 class="titulo">A Cabana</h3>
+                <hr>
+                <h3 class="valor">R$ 35.70</h3>
+                <button onclick="adicionarNoCarrinho(1)" class="adicionar-carrinho">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 576 512"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96zM252 160c0 11 9 20 20 20h44v44c0 11 9 20 20 20s20-9 20-20V180h44c11 0 20-9 20-20s-9-20-20-20H356V96c0-11-9-20-20-20s-20 9-20 20v44H272c-11 0-20 9-20 20z"/></svg>
+                </button>
+            </div>
+            <div class="livro" id="id2">
+                <img src="/imgs/1984.jpg" alt="1984 by George Orwell">
+                <h3 class="titulo">1984</h3>
+                <hr>
+                <h3 class="valor">R$ 46.99</h3>
+                <button onclick="adicionarNoCarrinho(2)" class="adicionar-carrinho">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 576 512"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96zM252 160c0 11 9 20 20 20h44v44c0 11 9 20 20 20s20-9 20-20V180h44c11 0 20-9 20-20s-9-20-20-20H356V96c0-11-9-20-20-20s-20 9-20 20v44H272c-11 0-20 9-20 20z"/></svg>
+                </button>
+            </div>
+            <div class="livro" id="id3">
+                <img src="/imgs/O_Hobbit.jpg" alt="O Hobbit by J.R.R. Tolkien">
+                <h3 class="titulo">O Hobbit</h3>
+                <hr>
+                <h3 class="valor">R$ 37.78</h3>
+                <button onclick="adicionarNoCarrinho(3)" class="adicionar-carrinho">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 576 512"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96zM252 160c0 11 9 20 20 20h44v44c0 11 9 20 20 20s20-9 20-20V180h44c11 0 20-9 20-20s-9-20-20-20H356V96c0-11-9-20-20-20s-20 9-20 20v44H272c-11 0-20 9-20 20z"/></svg>
+                </button>
+            </div>
+            <div class="livro" id="id4">
+                <img src="/imgs/Harry-Potter-e-a-Pedra-Filosofal.jpg" alt="Harry Potter e a Pedra Filosofal by J.K. Rowling">
+                <h3 class="titulo">Harry Potter e a Pedra Filosofal</h3>
+                <hr>
+                <h3 class="valor">R$ 39.99</h3>
+                <button onclick="adicionarNoCarrinho(4)" class="adicionar-carrinho">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 576 512"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96zM252 160c0 11 9 20 20 20h44v44c0 11 9 20 20 20s20-9 20-20V180h44c11 0 20-9 20-20s-9-20-20-20H356V96c0-11-9-20-20-20s-20 9-20 20v44H272c-11 0-20 9-20 20z"/></svg>
+                </button>
+            </div>
+            <div class="livro" id="id5">
+                <img src="/imgs/Orgulho_e_Preconceito.jpg" alt="Orgulho e Preconceito by Jane Austen">
+                <h3 class="titulo">Orgulho e Preconceito</h3>
+                <hr>
+                <h3 class="valor">R$ 26.83</h3>
+                <button onclick="adicionarNoCarrinho(5)" class="adicionar-carrinho">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 576 512"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96zM252 160c0 11 9 20 20 20h44v44c0 11 9 20 20 20s20-9 20-20V180h44c11 0 20-9 20-20s-9-20-20-20H356V96c0-11-9-20-20-20s-20 9-20 20v44H272c-11 0-20 9-20 20z"/></svg>
+                </button>
+            </div>
+            <div class="livro" id="id6">
+                <img src="/imgs/A_Sociedade_do_Anel.jpg" alt="O Senhor dos Anéis: A Sociedade do Anel by J.R.R Tolkien">
+                <h3 class="titulo">O Senhor dos Anéis: A Sociedade do Anel</h3>
+                <hr>
+                <h3 class="valor">R$ 50.25</h3>
+                <button onclick="adicionarNoCarrinho(6)" class="adicionar-carrinho">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 576 512"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96zM252 160c0 11 9 20 20 20h44v44c0 11 9 20 20 20s20-9 20-20V180h44c11 0 20-9 20-20s-9-20-20-20H356V96c0-11-9-20-20-20s-20 9-20 20v44H272c-11 0-20 9-20 20z"/></svg>
+                </button>
+            </div>
+            <div class="livro" id="id7">
+                <img src="/imgs/O_Pequeno_Principe.jpg" alt="O Pequeno Príncipe by Antoine de Saint-Exupéry">
+                <h3 class="titulo">O Pequeno Príncipe</h3>
+                <hr>
+                <h3 class="valor">R$ 27.80</h3>
+                <button onclick="adicionarNoCarrinho(7)" class="adicionar-carrinho">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 576 512"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96zM252 160c0 11 9 20 20 20h44v44c0 11 9 20 20 20s20-9 20-20V180h44c11 0 20-9 20-20s-9-20-20-20H356V96c0-11-9-20-20-20s-20 9-20 20v44H272c-11 0-20 9-20 20z"/></svg>
+                </button>
+            </div>
+            <div class="livro" id="id8">
+                <img src="/imgs/Cem_Anos_de_Solidão.jpg" alt="Cem Anos de Solidão by Gabriel García">
+                <h3 class="titulo">Cem Anos de Solidão</h3>
+                <hr>
+                <h3 class="valor">R$ 35.49</h3>
+                <button onclick="adicionarNoCarrinho(8)" class="adicionar-carrinho">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 576 512"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96zM252 160c0 11 9 20 20 20h44v44c0 11 9 20 20 20s20-9 20-20V180h44c11 0 20-9 20-20s-9-20-20-20H356V96c0-11-9-20-20-20s-20 9-20 20v44H272c-11 0-20 9-20 20z"/></svg>
+                </button>
+            </div>
+            <div class="livro" id="id9">
+                <img src="/imgs/CRIME-E-CASTIGO.jpg" alt="Crime e Castigo by Fyodor Dostoevsky">
+                <h3 class="titulo">Crime e Castigo</h3>
+                <hr>
+                <h3 class="valor">R$ 45.28</h3>
+                <button onclick="adicionarNoCarrinho(9)" class="adicionar-carrinho">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 576 512"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96zM252 160c0 11 9 20 20 20h44v44c0 11 9 20 20 20s20-9 20-20V180h44c11 0 20-9 20-20s-9-20-20-20H356V96c0-11-9-20-20-20s-20 9-20 20v44H272c-11 0-20 9-20 20z"/></svg>
+                </button>
+            </div>
+            <div class="livro" id="id10">
+                <img src="/imgs/A_Metamorfose.jpg" alt="A Metamorfose by Franz Kafka">
+                <h3 class="titulo">A Metamorfose</h3>
+                <hr>
+                <h3 class="valor">R$ 24.76</h3>
+                <button onclick="adicionarNoCarrinho(10)" class="adicionar-carrinho">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 576 512"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96zM252 160c0 11 9 20 20 20h44v44c0 11 9 20 20 20s20-9 20-20V180h44c11 0 20-9 20-20s-9-20-20-20H356V96c0-11-9-20-20-20s-20 9-20 20v44H272c-11 0-20 9-20 20z"/></svg>
+                </button>
+            </div>
+            <div class="livro" id="id11">
+                <img src="/imgs/O_Alquimista.jpg" alt="O Alquimista by Paulo Coelho">
+                <h3 class="titulo">O Alquimista</h3>
+                <hr>
+                <h3 class="valor">R$ 49.99</h3>
+                <button onclick="adicionarNoCarrinho(11)" class="adicionar-carrinho">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 576 512"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96zM252 160c0 11 9 20 20 20h44v44c0 11 9 20 20 20s20-9 20-20V180h44c11 0 20-9 20-20s-9-20-20-20H356V96c0-11-9-20-20-20s-20 9-20 20v44H272c-11 0-20 9-20 20z"/></svg>
+                </button>
+            </div>
+            <div class="livro" id="id12">
+                <img src="/imgs/dom_quixote.jpg" alt="Dom Quixote by Miguel de Cervantes">
+                <h3 class="titulo">Dom Quixote</h3>
+                <hr>
+                <h3 class="valor">R$ 32.99</h3>
+                <button onclick="adicionarNoCarrinho(12)" class="adicionar-carrinho">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 576 512"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96zM252 160c0 11 9 20 20 20h44v44c0 11 9 20 20 20s20-9 20-20V180h44c11 0 20-9 20-20s-9-20-20-20H356V96c0-11-9-20-20-20s-20 9-20 20v44H272c-11 0-20 9-20 20z"/></svg>
+                </button>
+            </div>
+            <div class="livro" id="id13">
+                <img src="/imgs/Moby_Dick.jpg" alt="Moby Dick by Herman Melville">
+                <h3 class="titulo">Moby Dick</h3>
+                <hr>
+                <h3 class="valor">R$ 35.87</h3>
+                <button onclick="adicionarNoCarrinho(13)" class="adicionar-carrinho">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 576 512"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96zM252 160c0 11 9 20 20 20h44v44c0 11 9 20 20 20s20-9 20-20V180h44c11 0 20-9 20-20s-9-20-20-20H356V96c0-11-9-20-20-20s-20 9-20 20v44H272c-11 0-20 9-20 20z"/></svg>
+                </button>
+            </div>
+            <div class="livro" id="id14">
+                <img src="/imgs/A_Revolução_dos_Bixos.jpg" alt="A Revolução dos Bichos by George Orwell">
+                <h3 class="titulo">A Revolução dos Bichos</h3>
+                <hr>
+                <h3 class="valor">R$ 27.49</h3>
+                <button onclick="adicionarNoCarrinho(14)" class="adicionar-carrinho">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 576 512"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96zM252 160c0 11 9 20 20 20h44v44c0 11 9 20 20 20s20-9 20-20V180h44c11 0 20-9 20-20s-9-20-20-20H356V96c0-11-9-20-20-20s-20 9-20 20v44H272c-11 0-20 9-20 20z"/></svg>
+                </button>
+            </div>
+            <div class="livro" id="id15">
+                <img src="/imgs/O_Retrato_de_Dorian_Gray.jpg" alt="O Retrato de Dorian Gray by Oscar Wilde">
+                <h3 class="titulo">O Retrato de Dorian Gray</h3>
+                <hr>
+                <h3 class="valor">R$ 29.99</h3>
+                <button onclick="adicionarNoCarrinho(15)" class="adicionar-carrinho">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 576 512"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96zM252 160c0 11 9 20 20 20h44v44c0 11 9 20 20 20s20-9 20-20V180h44c11 0 20-9 20-20s-9-20-20-20H356V96c0-11-9-20-20-20s-20 9-20 20v44H272c-11 0-20 9-20 20z"/></svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+    <h2>Requisito:</h2>
+    <ol start="6">
+        <li> Considere o seguinte cenário: você está desenvolvendo uma aplicação web para uma loja de livros. A
+            aplicação deve exibir uma lista de livros disponíveis, permitir que o usuário adicione livros ao
+            carrinho de compras e atualizar dinamicamente o total de itens no carrinho. Escreva um trecho de código
+            HTML, CSS e JavaScript que implemente essa funcionalidade (Anexar pagina HTML ao email).</li>
+    </ol>
+
+    <script src="/scripts/livraria.js"></script>
+</body>
+
+</html>
