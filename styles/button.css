@@ -1,0 +1,14 @@
+section button {
+    transition: background .3s;
+    cursor: pointer;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    border: 3px solid #0a0af1;
+    background-color: #2020fd;
+}
+section button:hover {
+    border-color: #030396;
+    background-color: #0202cf;
+}
